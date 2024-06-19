@@ -1,9 +1,9 @@
 # MIRReS: Multi-bounce Inverse Rendering using Reservoir Sampling
 
 
-This repository contains a PyTorch implementation of the paper: [MIRReS: Multi-bounce Inverse Rendering using Reservoir Sampling]().
+This repository contains a PyTorch implementation of : [MIRReS: Multi-bounce Inverse Rendering using Reservoir Sampling](https://brabbitdousha.github.io/MIRReS/).
 
-### [Project Page](https://brabbitdousha.github.io/MIRReS/) | [Arxiv]()
+### [Project Page](https://brabbitdousha.github.io/MIRReS/) | [Arxiv:coming]()
 ![](assets/fig1.png)
 
 # Acknowledgement
@@ -16,8 +16,8 @@ This repository contains a PyTorch implementation of the paper: [MIRReS: Multi-b
 # Install
 
 ```bash
-git clone
-cd 
+git clone https://github.com/brabbitdousha/ReSTIRpath_nerf_mesh.git
+cd ReSTIRpath_nerf_mesh
 ```
 
 ### Install with pip
