@@ -1,0 +1,25 @@
+#stage0:
+python main.py data/tensoir_syn/tensoir_train/tensoir_armadillo --workspace ir_arm/ -O --bound 1 --scale 0.8 --dt_gamma 0 --stage 0 --lambda_tv 1e-8 --iters 50000
+
+#change the {workspace}/mesh_stage0/mesh_0.ply, to your mesh, and rename it: mesh_0.ply
+#please make sure your mesh and the mesh_0.ply are in the same coordinate system, you can check them in Blender, Maya or such.
+
+#stage1:
+python main.py data/tensoir_syn/tensoir_train/tensoir_armadillo --workspace ir_arm/ -O --bound 1 --scale 0.8 --dt_gamma 0 --stage 1 --use_brdf --use_restir --lambda_kd 0.022 --lambda_ks 0.000055 --lambda_normal 0.0001 --lambda_rgb_brdf 0.07 --learning_rate_lgt 0.09 --roughness_min 0.16 --spp 48
+
+
+# nvs eval using 512 spp
+# note that validation_brdf will be overwritten every evaluation, so you can change current validation_brdf's name before new evaluation
+# note that --roughness_min and --me_max should be the same as when trainning
+python main.py data/tensoir_syn/tensoir_train/tensoir_armadillo --workspace ir_arm/ -O --bound 1 --scale 0.8 --dt_gamma 0 --stage 1 --use_brdf --use_restir --test --test_no_mesh --roughness_min 0.16 --spp 512
+
+#Albedo eval
+please check albedo_eval.py
+you will get albedo scale factor after running it.
+
+# relighting eval
+
+# for example bridge
+# change the envmap and albedo scale for each scene
+# note that --roughness_min and --me_max should be the same as when trainning
+python main.py data/tensoir_syn/tensoir_relight/armadillo/test_bridge --workspace ir_arm/ -O --bound 1 --scale 0.8 --dt_gamma 0 --stage 1 --use_brdf --use_restir --test --test_no_mesh --roughness_min 0.16 --spp 128 --albedo_scale_x X.XX --albedo_scale_y X.XX --albedo_scale_z X.XX --envmap_path data/tensoir_syn/tensoir_relight/envmap/bridge.hdr

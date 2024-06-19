@@ -1,0 +1,13 @@
+#stage0:
+python main.py data/nerf_synthetic/mic --workspace mic_out -O --bound 1 --scale 0.8 --dt_gamma 0 --stage 0 --lambda_tv 1e-8 --iters 50000
+
+#change the {workspace}/mesh_stage0/mesh_0.ply, to your mesh, and rename it: mesh_0.ply
+#please make sure your mesh and the mesh_0.ply are in the same coordinate system, you can check them in Blender, Maya or such.
+
+#stage1:
+python main.py data/nerf_synthetic/mic --workspace mic_out -O --bound 1 --scale 0.8 --dt_gamma 0 --stage 1 --use_brdf --use_restir --lambda_kd 0.03 --lambda_ks 0.0001 --lambda_normal 0.0005 --lambda_edgelen 0.1 --lambda_nrm 0.00035 --lambda_rgb_brdf 0.07 --spp 64 --me_max 0.2
+
+# nvs eval using 512 spp
+# note that validation_brdf will be overwritten every evaluation, so you can change current validation_brdf's name before new evaluation
+# note that --roughness_min and --me_max should be the same as when trainning
+python main.py data/nerf_synthetic/mic --workspace mic_out -O --bound 1 --scale 0.8 --dt_gamma 0 --stage 1 --use_brdf --use_restir --test --test_no_mesh --me_max 0.2 --spp 512

@@ -1,0 +1,18 @@
+#stage0:
+python main.py data/yourdataset --workspace yours/ -O --bound 1 --scale 1.0 --dt_gamma 0 --stage 0 --lambda_tv 1e-8 --iters 50000 --background random
+
+#change the {workspace}/mesh_stage0/mesh_0.ply, to your mesh, and rename it: mesh_0.ply
+#please make sure your mesh and the mesh_0.ply are in the same coordinate system, you can check them in Blender, Maya or such.
+
+#stage1:
+python main.py data/yourdataset --workspace yours/ -O --bound 1 --scale 1.0 --dt_gamma 0 --stage 1 --use_brdf --use_restir --lambda_kd 0.02 --lambda_ks 0.0001 --lambda_normal 0.0003 --lambda_edgelen 0.1 --lambda_nrm 0.0007 --lambda_rgb_brdf 0.05
+
+
+# nvs eval using 512 spp
+# note that validation_brdf will be overwritten every evaluation, so you can change current validation_brdf's name before new evaluation
+# note that --roughness_min and --me_max should be the same as when trainning
+python main.py data/yourdataset --workspace yours/ -O --bound 1 --scale 1.0 --dt_gamma 0 --stage 1 --use_brdf --use_restir --test --test_no_mesh --spp 512
+
+
+# sometimes this config won't work with metal or specular scene, you can try with --me_max 0.2 or --me_max 0.4
+# remember that --roughness_min and --me_max should be the same at evaluation as when trainning
