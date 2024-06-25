@@ -3,7 +3,7 @@
 
 This repository contains a PyTorch implementation of : [MIRReS: Multi-bounce Inverse Rendering using Reservoir Sampling](https://brabbitdousha.github.io/MIRReS/).
 
-### [Project Page](https://brabbitdousha.github.io/MIRReS/) | [Arxiv:coming]()
+### [Project Page](https://brabbitdousha.github.io/MIRReS/) | [Paper(Arxiv)](https://arxiv.org/abs/2406.16360)
 ![](assets/fig1.png)
 
 # Acknowledgement
@@ -126,8 +126,15 @@ the framework is based on [nerf2mesh](https://github.com/ashawkey/nerf2mesh), pl
 
 Besides, we changed their network to the original ngp network: [torch-ngp](https://github.com/ashawkey/torch-ngp) because this can get better results in our settings.
 
-# Citation
+# Citation(arXiv)
 
 ```
-
+@misc{dai2024mirres,
+      title={MIRReS: Multi-bounce Inverse Rendering using Reservoir Sampling}, 
+      author={Yuxin Dai and Qi Wang and Jingsen Zhu and Dianbing Xi and Yuchi Huo and Chen Qian and Ying He},
+      year={2024},
+      eprint={2406.16360},
+      archivePrefix={arXiv},
+      primaryClass={id='cs.CV' full_name='Computer Vision and Pattern Recognition' is_active=True alt_name=None in_archive='cs' is_general=False description='Covers image processing, computer vision, pattern recognition, and scene understanding. Roughly includes material in ACM Subject Classes I.2.10, I.4, and I.5.'}
+}
 ```
