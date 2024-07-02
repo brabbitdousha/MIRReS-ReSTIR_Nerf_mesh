@@ -16,8 +16,8 @@ This repository contains a PyTorch implementation of : [MIRReS: Multi-bounce Inv
 # Install
 
 ```bash
-git clone https://github.com/brabbitdousha/ReSTIRpath_nerf_mesh.git
-cd ReSTIRpath_nerf_mesh
+git clone https://github.com/brabbitdousha/MIRReS-ReSTIR_Nerf_mesh.git
+cd MIRReS-ReSTIR_Nerf_mesh
 ```
 
 ### Install with pip
