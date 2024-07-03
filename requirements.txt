@@ -15,7 +15,7 @@ tensorboardX
 opencv-python
 imageio
 imageio-ffmpeg
-pymeshlab
+pymeshlab==2022.2.post4
 torch-scatter
 xatlas
 scikit-learn
