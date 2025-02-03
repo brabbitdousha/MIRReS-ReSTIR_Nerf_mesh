@@ -27,7 +27,7 @@ bool aabb_hit(float3 rayo, float3 rayd, float t_min, float t_max, float3 bbox_mi
         }
         t_min = t0 > t_min ? t0 : t_min;
         t_max = t1 < t_max ? t1 : t_max;
-        if (t_max <= t_min)
+        if (t_max < t_min)
             return false;
     }
     return true;

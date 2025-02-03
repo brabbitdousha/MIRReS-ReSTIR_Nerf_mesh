@@ -1,7 +1,7 @@
-# MIRReS: Multi-bounce Inverse Rendering using Reservoir Sampling
+# MIRReS: Inverse Rendering for Shape, Light, and Material Decomposition using Multi-Bounce Path Tracing and Reservoir Sampling
 
 
-This repository contains a PyTorch implementation of : [MIRReS: Multi-bounce Inverse Rendering using Reservoir Sampling](https://brabbitdousha.github.io/MIRReS/).
+This repository contains a PyTorch implementation of : [MIRReS: Inverse Rendering for Shape, Light, and Material Decomposition using Multi-Bounce Path Tracing and Reservoir Sampling](https://brabbitdousha.github.io/MIRReS/).
 
 ### [Project Page](https://brabbitdousha.github.io/MIRReS/) | [Paper(Arxiv)](https://arxiv.org/abs/2406.16360)
 ![](assets/fig1.png)
